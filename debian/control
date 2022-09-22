@@ -1,0 +1,69 @@
+Source: libepsilon
+Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
+Uploaders: Francesco Paolo Lovergine <frankie@debian.org>,
+           Bas Couwenberg <sebastic@debian.org>
+Section: science
+Priority: optional
+Build-Depends: debhelper (>= 10~),
+               libpopt-dev,
+               docbook2x,
+               docbook-xsl,
+               docbook-xml,
+               xsltproc
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/debian-gis-team/libepsilon
+Vcs-Git: https://salsa.debian.org/debian-gis-team/libepsilon.git
+Homepage: https://sourceforge.net/projects/epsilon-project
+
+Package: libepsilon-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libepsilon1 (= ${binary:Version}),
+         ${misc:Depends}
+Description: Library for wavelet image compression - development files
+ Epsilon is C library for wavelet based lossy image compression.
+ Wavelet-driven compressors are know to be much more effective than
+ traditional DCT-based ones (like JPEG).
+ .
+ At the moment, the program supports about 30 different wavelet filters,
+ runs in parallel in multi-threaded and MPI environments, can process
+ huge images and much more.
+ .
+ This package contains development stuff.
+
+Package: libepsilon1
+Architecture: any
+Multi-Arch: same
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Library for wavelet image compression
+ Epsilon is C library for Wavelet based lossy image compression.
+ Wavelet-driven compressors are know to be much more effective than
+ traditional DCT-based ones (like JPEG).
+ .
+ At the moment, the program supports about 30 different wavelet filters,
+ runs in parallel in multi-threaded and MPI environments, can process
+ huge images and much more.
+ .
+ This package contains files required to build C/C++ programs which use
+ the Epsilon library.
+
+Package: epsilon-bin
+Architecture: any
+Depends: dsh,
+         ${perl:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Library for wavelet image compression - tools
+ Epsilon is C library for Wavelet based lossy image compression.
+ Wavelet-driven compressors are know to be much more effective than
+ traditional DCT-based ones (like JPEG).
+ .
+ At the moment, the program supports about 30 different wavelet filters,
+ runs in parallel in multi-threaded and MPI environments, can process
+ huge images and much more.
+ .
+ This package contains some useful tools to compress/uncompress images.

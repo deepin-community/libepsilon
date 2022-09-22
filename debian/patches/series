@@ -1,0 +1,3 @@
+disable-lena-tests.patch
+declare-xmalloc.patch
+acute-accent-in-manual-page.patch

@@ -1,0 +1,43 @@
+Description: Disable tests using non-free lena image.
+Author: Bas Couwenberg <sebastic@debian.org>
+Forwarded: not-needed
+
+--- a/tests/images/Makefile.am
++++ b/tests/images/Makefile.am
+@@ -1,3 +1,3 @@
+ INCLUDES =
+ METASOURCES = AUTO
+-dist_noinst_DATA = lena.pgm nirvana.ppm gray_dot.pgm horizontal_rainbow.ppm horizontal_gradient.pgm red_dot.ppm vertical_gradient.pgm vertical_rainbow.ppm
++dist_noinst_DATA = nirvana.ppm gray_dot.pgm horizontal_rainbow.ppm horizontal_gradient.pgm red_dot.ppm vertical_gradient.pgm vertical_rainbow.ppm
+--- a/tests/images/Makefile.in
++++ b/tests/images/Makefile.in
+@@ -159,7 +159,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ INCLUDES = 
+ METASOURCES = AUTO
+-dist_noinst_DATA = lena.pgm nirvana.ppm gray_dot.pgm horizontal_rainbow.ppm horizontal_gradient.pgm red_dot.ppm vertical_gradient.pgm vertical_rainbow.ppm
++dist_noinst_DATA = nirvana.ppm gray_dot.pgm horizontal_rainbow.ppm horizontal_gradient.pgm red_dot.ppm vertical_gradient.pgm vertical_rainbow.ppm
+ all: all-am
+ 
+ .SUFFIXES:
+--- a/tests/t/quick.t
++++ b/tests/t/quick.t
+@@ -79,7 +79,6 @@ Readonly my %TEST_IMAGES      => (
+         min_Cb_psnr => 31.50,
+         min_Cr_psnr => 40.10,
+     },
+-    'lena.pgm'    => 53.20,
+     'nirvana.ppm' => {
+         min_Y_psnr  => 55.20,
+         min_Cb_psnr => 44.50,
+--- a/tests/t/verification.t
++++ b/tests/t/verification.t
+@@ -76,8 +76,6 @@ Readonly my $MPI_MACHINE_FILE =>
+     catfile( $Bin, q{..}, 'build', 'machines.MPICH' );
+ 
+ Readonly my %TEST_IMAGES => (
+-    'lena.pgm' => 53,
+-
+     'nirvana.ppm' => {
+         min_Y_psnr  => 50,
+         min_Cb_psnr => 44,

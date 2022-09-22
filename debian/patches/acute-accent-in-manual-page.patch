@@ -1,0 +1,19 @@
+Description: Don't use \' groff sequence.
+Author: Bas Couwenberg <sebastic@debian.org>
+Forwarded: not-needed
+
+--- a/man/epsilon.1
++++ b/man/epsilon.1
+@@ -198,10 +198,10 @@ the number of CPUs or somewhat larger.
+ If you omit this option, EPSILON will try \fI.epsilon.nodes\fR
+ in the current and home directory (in that order).
+ 
+-Note 1: \'user\' field is used by \fBstart\_epsilon\_nodes.pl\fR
++Note 1: 'user' field is used by \fBstart\_epsilon\_nodes.pl\fR
+ and \fBstop\_epsilon\_nodes.pl\fR to SSH into the target box.
+ 
+-Note 2: \'port\' is EPSILON node's port not SSH's.
++Note 2: 'port' is EPSILON node's port not SSH's.
+ 
+ .TP
+ \fB\-T\fR, \fB\-\-threads\fR

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='stop_epsilon_nodes'>
+
+  <refmeta>
+    <refentrytitle>stop_epsilon_nodes</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>stop_epsilon_nodes</refname>
+    <refpurpose>stop EPSILON nodes using DSH</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>stop_epsilon_nodes</command>
+      <arg choice='opt'><option><replaceable>file</replaceable></option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>stop_epsilon_nodes</command> is a script for stopping EPSILON
+      nodes using DSH (Distributed SHell).
+      Host configuration is taken from so called `.epsilon.nodes' file.
+    </para>
+    <para>
+      By default, program checks `.epsilon.nodes' in the current directory.
+      If there is no such file, program tries `.epsilon.nodes' in user`s home
+      directory, i.e. \$HOME/.epsilon.nodes. You can also explicitly specify
+      file location as an argument to `stop_epsilon_nodes.pl' script.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option><replaceable>file</replaceable></option></term>
+        <listitem>
+          <para>Path to epsilon nodes configuration file</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>
